@@ -1,4 +1,5 @@
 /* Program que simula un cajero automático con un saldo inicial de 1000 Dólares */
+/* lola */
 #include <stdio.h>
 
 int main(){
