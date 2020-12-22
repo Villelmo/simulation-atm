@@ -1,6 +1,17 @@
 /* Program que simula un cajero automático con un saldo inicial de 1000 Dólares */
 /* lola */
 #include <stdio.h>
+#define SALDO_INICIAL 1000
+
+void deposito(int saldo){
+}
+
+void retiro(){
+}
+
+void ver_saldo(){
+}
+
 
 int main(){
 	int saldo_inicial = 1000;
@@ -15,6 +26,7 @@ int main(){
 	printf("\nOpcion: ");
 	scanf("%d",&opcion);
 
+	
 	if(opcion == 1){
 		printf("\nIngrese la cantidad a depositar");
 		scanf("%d",&agregar);
