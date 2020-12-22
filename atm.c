@@ -3,7 +3,11 @@
 #include <stdio.h>
 #define SALDO_INICIAL 1000
 
-void deposito(int saldo){
+void deposito(int saldo,int agregar){
+	printf("\nIngrese la cantidad a depositar");
+	scanf("%d",&agregar);	
+	saldo = saldo_inicial + agregar;
+	printf("\nCantidad disponible en cuenta: %d",saldo);
 }
 
 void retiro(){
@@ -28,10 +32,7 @@ int main(){
 
 	
 	if(opcion == 1){
-		printf("\nIngrese la cantidad a depositar");
-		scanf("%d",&agregar);
-		saldo = saldo_inicial + agregar;
-		printf("\nCantidad disponible en cuenta: %d",saldo);
+		deposito();
 	}else if(opcion == 2){
 		printf("\nCuanta cantidad desea retirar:");
 		scanf("%d",&reintegro);
