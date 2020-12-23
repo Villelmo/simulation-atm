@@ -10,16 +10,24 @@ void deposito(int saldo,int agregar){
 	printf("\nCantidad disponible en cuenta: %d",saldo);
 }
 
-void retiro(){
+void retiro(int reintegro,int saldo){
+	printf("\nCuanta cantidad desea retirar:");
+	scanf("%d",&reintegro);
+	if(reintegro > 1000){
+		printf("La cantidad digitada es mayor a 1000, digite de nuevo la cantidad a retirar");
+		scanf("%d",&reintegro);
+	}
+	saldo = saldo_inicial - reintegro;
+	printf("\nCantidad disponible en cuenta: %d ",saldo);
 }
 
 void ver_saldo(){
+	printf("\nLa cantidad disponible en cuenta es de: %d",saldo_inicial);
 }
 
 
 int main(){
-	int saldo_inicial = 1000;
-	int saldo, reintegro,opcion,agregar;
+	int opcion;
 
 	printf("\tBienvenido a su cajero Virtual");
 	printf("\nEscoja una opción: ");
@@ -34,16 +42,10 @@ int main(){
 	if(opcion == 1){
 		deposito();
 	}else if(opcion == 2){
-		printf("\nCuanta cantidad desea retirar:");
-		scanf("%d",&reintegro);
-		if(reintegro > 1000){
-			printf("La cantidad digitada es mayor a 1000, digite de nuevo la cantidad a retirar");
-			scanf("%d",&reintegro);
-		}
-		saldo = saldo_inicial - reintegro;
-		printf("\nCantidad disponible en cuenta: %d ",saldo);
+		retiro();
+		
 	}else if(opcion == 3){
-		printf("\nLa cantidad disponible en cuenta es de: %d",saldo_inicial);
+		ver_saldo();
 	}else if(opcion == 0){
 		printf("Gracias por utilizar nuestro cajero automatico");
 	}else{
